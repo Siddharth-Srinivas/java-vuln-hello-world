@@ -43,8 +43,8 @@ jobs:
         # In this case we want to upload the SAST issues to GitHub Code Scanning
         uses: snyk/actions/setup@806182742461562b67788a64410098c9d9b96adb
 
-      - name: List workspace
-        run: ls /github/workspace
+      - run: pwd
+      - run: ls -lrt
 
       - uses: snyk/actions/gradle-9-jdk21@master
         env:
