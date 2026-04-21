@@ -34,3 +34,118 @@ jobs:
 
     - name: Build with Gradle
       run: ./gradlew build
+
+    - name: Scribe SLSA Provenance Generator
+      # You may pin to the exact commit or the version.
+      # uses: scribe-security/action-slsa@9fb29d196d89e2b2813da57dc5d9b3fbdd4fd08f
+      uses: scribe-security/action-slsa@v1
+      with:
+        # Target object name format=[<image:tag>, <dir path>, <git url>]
+        target: https://github.com/Siddharth-Srinivas/java-vuln-hello-world.git
+        # Target source type scheme=[docker,docker-archive, oci-archive, dir, registry, git, generic]
+        type: git
+        # Scribe auth audience
+        scribe-audience: # optional
+        # Attach all environment variables
+        all-env: # optional
+        # Set build type
+        build-type: # optional
+        # Set builder id
+        builder-id: # optional
+        # Attach by product path
+        by-product: # optional
+        # Select by products components groups, options=[metadata layers packages syft files dep commits]
+        components: # optional
+        # Add build external parameters
+        external: # optional
+        # Set metadata finished time (YYYY-MM-DDThh:mm:ssZ)
+        finished-on: # optional
+        # Force overwrite cache
+        force: # optional
+        # Evidence format, options=[statement attest predicate]
+        format: # optional
+        # Set metadata invocation ID
+        invocation: # optional
+        # Import predicate path
+        predicate: # optional
+        # Set metadata started time (YYYY-MM-DDThh:mm:ssZ)
+        started-on: # optional
+        # Import statement path
+        statement: # optional
+        # Logical application name
+        app-name: # optional
+        # Logical application version
+        app-version: # optional
+        # Attestation config path
+        attest-config: # optional
+        # Attestation default config, options=[sigstore sigstore-github x509 x509-env]
+        attest-default: # optional
+        # Backoff duration
+        backoff: # optional
+        # x509 CA Chain path
+        ca: # optional
+        # Enable local cache
+        cache-enable: # optional
+        # x509 Cert path
+        cert: # optional
+        # Configuration file path
+        config: # optional
+        # Context dir
+        context-dir: # optional
+        # Environment keys to include in sbom
+        env: # optional
+        # Filter out files by regex
+        filter-regex: # optional
+        # Filter packages by scope
+        filter-scope: # optional
+        # Git branch in the repository
+        git-branch: # optional
+        # Git commit hash in the repository
+        git-commit: # optional
+        # Git tag in the repository
+        git-tag: # optional
+        # x509 Private key path
+        key: # optional
+        # Add Custom labels
+        label: # optional
+        # Log depth level, options=[panic fatal error warning info debug trace]
+        level: # optional
+        # Attach context to all logs
+        log-context: # optional
+        # Output log to file
+        log-file: # optional
+        # Enable OCI store
+        oci: # optional
+        # Select OCI custom attestation repo
+        oci-repo: # optional
+        # Output directory path
+        output-directory: # optional, default is ./scribe/valint
+        # Output file name
+        output-file: # optional
+        # Pipeline name
+        pipeline-name: # optional
+        # Custom Predicate type (generic evidence format)
+        predicate-type: # optional
+        # Product Key
+        product-key: # optional
+        # Product Version
+        product-version: # optional
+        # Scribe auth audience
+        scribe-auth-audience: # optional
+        # Scribe Client ID
+        scribe-client-id: # optional
+        # Scribe Client Secret
+        scribe-client-secret: # optional
+        # Enable scribe client
+        scribe-enable: # optional
+        # Scribe login url
+        scribe-login-url: # optional
+        # Scribe API Url
+        scribe-url: # optional
+        # Enable structured logger
+        structured: # optional
+        # Timeout duration
+        timeout: # optional
+        # Log verbosity level [-v,--verbose=1] = info, [-vv,--verbose=2] = debug
+        verbose: # optional
+          
